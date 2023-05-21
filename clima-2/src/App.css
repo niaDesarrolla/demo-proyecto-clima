@@ -1,0 +1,17 @@
+body{
+  background-color: #2f3544;
+
+}
+
+.App {
+  text-align: center;
+}
+
+.input{
+  width: 60%;
+
+}
+
+.cardApi{
+  max-width: 40%;
+}
