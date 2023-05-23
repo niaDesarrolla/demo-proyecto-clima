@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CardApi from './cardsapi';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 const WeatherApp = () => {
   const apiKey = 'f70f771f8fd64f27822214051231305';
@@ -10,6 +12,7 @@ const WeatherApp = () => {
   const [cityData, setCityData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [show, setShow] = useState(false);
+  
 
   const handleCityChange = (event) => {
     setCity(event.target.value);
@@ -29,6 +32,7 @@ const WeatherApp = () => {
       }
       const weatherData = await response.json();
       console.log(weatherData);
+
       const cityData = {
         name: weatherData.location.name,
         country: weatherData.location.country,
@@ -36,6 +40,7 @@ const WeatherApp = () => {
         temp_c: weatherData.current.temp_c,
         humidity: weatherData.current.humidity,
         condition: weatherData.current.condition.tex,
+        precipitacion: weatherData.current.condition.tex,
         icon: weatherData.current.condition.icon,
         localtime: weatherData.location.localtime,
       };
@@ -48,6 +53,7 @@ const WeatherApp = () => {
       setShow(false);
     }
   };
+  const Buscar = 'Buscar';
 
   return (
     <div>
